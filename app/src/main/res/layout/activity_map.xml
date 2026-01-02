@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#1a237e">
 
-    <!-- Верхняя панель -->
+    <!-- Верхняя панель управления -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Операция 'Везерюбунг' - 1940"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -26,42 +28,51 @@
             android:layout_height="wrap_content"
             android:text="9 апреля 1940"
             android:textColor="#bbdefb"
-            android:textSize="16sp"
-            android:layout_marginTop="4dp" />
+            android:textSize="18sp"
+            android:layout_marginTop="8dp" />
 
+        <!-- Ползунок выбора даты -->
         <SeekBar
-            android:id="@+id/dateSeekBar"
+            android:id="@+id/slider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:max="3"
-            android:progress="0" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:max="6"
+            android:progress="0"
+            android:progressTint="#5c6bc0"
+            android:thumbTint="#ffffff" />
 
+        <!-- Кнопки навигации -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btnPrev"
                 android:layout_width="0dp"
-                android:layout_height="36dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="← Назад"
-                android:textSize="12sp"
                 android:layout_marginEnd="4dp"
-                android:backgroundTint="#3949ab" />
+                android:backgroundTint="#3949ab"
+                android:text="← Назад"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/btnNext"
                 android:layout_width="0dp"
-                android:layout_height="36dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Вперед →"
-                android:textSize="12sp"
                 android:layout_marginStart="4dp"
-                android:backgroundTint="#5c6bc0" />
+                android:backgroundTint="#5c6bc0"
+                android:text="Вперед →"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -69,25 +80,9 @@
 
     <!-- Карта -->
     <org.osmdroid.views.MapView
-        android:id="@+id/mapView"
+        android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <org.osmdroid.views.MapView
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <SeekBar
-            android:id="@+id/slider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_margin="16dp" />
-    </FrameLayout>
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>

@@ -44,7 +44,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     // ДОБАВЬТЕ ЭТИ СТРОЧКИ (новый синтаксис):
     implementation("org.osmdroid:osmdroid-android:6.1.18")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.core:core-ktx:1.12.0")
+    implementation ("androidx.appcompat:appcompat:1.6.1")
 }
